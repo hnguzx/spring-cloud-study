@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: master
+  application:
+    name: client-service
+  security:
+    user:
+      name: guzx
+      password: 970712
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${spring.cloud.client.ip-address}:8761/eureka
+  instance:
+#    采用ip注册
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    status-page-url: http://localhost:4567/actuator
+#    默认90s
+    lease-expiration-duration-in-seconds: 90
+#    默认30s
+    lease-renewal-interval-in-seconds: 30
+    metadata-map:
+      address: hunan
+---
+server:
+  port: 4567
+spring:
+  config:
+    activate:
+      on-profile: master
+---
+server:
+  port: 4568
+spring:
+  config:
+    activate:
+      on-profile: branch

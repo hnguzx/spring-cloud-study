@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="client-service" />
+        <module name="eureka-server" />
+        <module name="eureka-server-cluster" />
+        <module name="custom-starter" />
+        <module name="consumer-service" />
+        <module name="section2" />
+        <module name="ribbon-native" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="client-service" target="1.8" />
+      <module name="consumer-service" target="1.8" />
+      <module name="custom-starter" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="eureka-server-cluster" target="1.8" />
+      <module name="ribbon-native" target="1.8" />
+      <module name="section2" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="client-service" options="-parameters" />
+      <module name="consumer-service" options="-parameters" />
+      <module name="custom-starter" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="eureka-server-cluster" options="-parameters" />
+      <module name="ribbon-native" options="-parameters" />
+      <module name="section2" options="-parameters" />
+    </option>
+  </component>
+</project>

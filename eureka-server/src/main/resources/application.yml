@@ -1,0 +1,22 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+  security:
+    user:
+      name: guzx
+      password: 970712
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${spring.cloud.client.ip-address}:${server.port}/eureka/
+  server:
+#    以下两个配置只推荐在开发环境中使用
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 60000
+

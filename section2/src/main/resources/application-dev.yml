@@ -1,0 +1,14 @@
+server:
+  port: ${random.int[2000,8000]}
+user:
+  age: 24
+  sex: man
+  addr: hunan
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    web: info
+custom:
+  enable: true
+  name: nihao
+debug: true

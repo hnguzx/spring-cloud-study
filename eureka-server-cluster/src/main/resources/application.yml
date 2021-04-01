@@ -1,0 +1,47 @@
+spring:
+  profiles:
+    active: master
+---
+spring:
+  config:
+    activate:
+      on-profile: master
+server:
+  port: 4570
+eureka:
+  instance:
+    hostname: master
+    appname: eureka-server-cluster
+  client:
+    service-url:
+      defaultZone: http://copy1:4571/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  server:
+    enable-self-preservation: false
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+---
+spring:
+  config:
+    activate:
+      on-profile: copy1
+server:
+  port: 4571
+eureka:
+  instance:
+    hostname: copy1
+    appname: eureka-server-cluster
+  client:
+    service-url:
+      defaultZone: http://master:4570/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  server:
+    enable-self-preservation: false
+management:
+  endpoint:
+    shutdown:
+      enabled: true

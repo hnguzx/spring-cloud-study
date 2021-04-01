@@ -1,0 +1,13 @@
+{
+  "properties":[
+    {
+      "name": "custom.name",
+      "defaultValue": "guzx"
+    },
+    {
+      "name": "custom.enable",
+      "type": "java.lang.Boolean",
+      "defaultValue": false
+    }
+  ]
+}
