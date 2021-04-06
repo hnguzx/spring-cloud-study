@@ -16,6 +16,9 @@
         <option value="$PROJECT_DIR$/consumer-service/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-server-cluster/pom.xml" />
         <option value="$PROJECT_DIR$/ribbon-native/pom.xml" />
+        <option value="$PROJECT_DIR$/feign-api/pom.xml" />
+        <option value="$PROJECT_DIR$/feign-provide/pom.xml" />
+        <option value="$PROJECT_DIR$/feign-consume/pom.xml" />
       </list>
     </option>
   </component>

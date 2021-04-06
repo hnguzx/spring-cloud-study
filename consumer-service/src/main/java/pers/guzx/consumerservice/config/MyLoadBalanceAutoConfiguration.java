@@ -21,22 +21,22 @@ import java.util.List;
  * @date 2021/4/1 16:20
  * @describe
  */
-@Configuration
+//@Configuration
 public class MyLoadBalanceAutoConfiguration {
 
-    @MyLoadBalanced
-    @Resource
+//    @MyLoadBalanced
+//    @Resource
     private List<RestTemplate> restTemplates = Collections.emptyList();
 
-    @Resource
+//    @Resource
     private LoadBalancerClient loadBalancerClient;
 
-    @Bean
+//    @Bean
     public LoadBalanceInterceptor loadBalanceInterceptor() {
         return new LoadBalanceInterceptor(loadBalancerClient);
     }
 
-    @Bean
+//    @Bean
     public SmartInitializingSingleton myLoadBalanceRestTemplateInitializer() {
         return new SmartInitializingSingleton() {
             @Override

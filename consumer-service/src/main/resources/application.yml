@@ -15,4 +15,30 @@ eureka:
     #    采用ip注册
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
-    status-page-url: http://localhost:4569/actuator
+    status-page-url: http://${spring.cloud.client.ip-address}:${server.port}/actuator
+
+ribbon:
+  eureka:
+    enabled: true
+logging:
+  level:
+    pers:
+      guzx:
+        consumerservice:
+          client:
+            CustomRemoteClient: debug
+feign:
+#  httpclient:
+#    enabled: false
+#  okhttp:
+#    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+
+
+

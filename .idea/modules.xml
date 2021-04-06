@@ -7,6 +7,9 @@
       <module fileurl="file://$PROJECT_DIR$/custom-starter/custom-starter.iml" filepath="$PROJECT_DIR$/custom-starter/custom-starter.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server-cluster/eureka-server-cluster.iml" filepath="$PROJECT_DIR$/eureka-server-cluster/eureka-server-cluster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feign-api/feign-api.iml" filepath="$PROJECT_DIR$/feign-api/feign-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feign-consume/feign-consume.iml" filepath="$PROJECT_DIR$/feign-consume/feign-consume.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feign-provide/feign-provide.iml" filepath="$PROJECT_DIR$/feign-provide/feign-provide.iml" />
       <module fileurl="file://$PROJECT_DIR$/ribbon-native/ribbon-native.iml" filepath="$PROJECT_DIR$/ribbon-native/ribbon-native.iml" />
       <module fileurl="file://$PROJECT_DIR$/section2/section2.iml" filepath="$PROJECT_DIR$/section2/section2.iml" />
     </modules>

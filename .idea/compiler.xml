@@ -12,8 +12,11 @@
         <module name="eureka-server-cluster" />
         <module name="custom-starter" />
         <module name="consumer-service" />
+        <module name="feign-api" />
+        <module name="feign-consume" />
         <module name="section2" />
         <module name="ribbon-native" />
+        <module name="feign-provide" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +25,9 @@
       <module name="custom-starter" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="eureka-server-cluster" target="1.8" />
+      <module name="feign-api" target="1.8" />
+      <module name="feign-consume" target="1.8" />
+      <module name="feign-provide" target="1.8" />
       <module name="ribbon-native" target="1.8" />
       <module name="section2" target="1.8" />
     </bytecodeTargetLevel>
@@ -33,6 +39,9 @@
       <module name="custom-starter" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="eureka-server-cluster" options="-parameters" />
+      <module name="feign-api" options="-parameters" />
+      <module name="feign-consume" options="-parameters" />
+      <module name="feign-provide" options="-parameters" />
       <module name="ribbon-native" options="-parameters" />
       <module name="section2" options="-parameters" />
     </option>

@@ -1,0 +1,14 @@
+server:
+  port: 82
+spring:
+  application:
+    name: feign-consume
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://guzx:970712@${spring.cloud.client.ip-address}:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+debug: true

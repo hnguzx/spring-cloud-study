@@ -1,11 +1,13 @@
 package pers.guzx.consumerservice.controller;
 
+import feign.Feign;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import pers.guzx.consumerservice.client.CustomRemoteClient;
 import pers.guzx.consumerservice.pojo.House;
 
 import javax.annotation.Resource;
@@ -91,6 +93,16 @@ public class HouseClientController {
         String serviceName = "client-service";
         ServiceInstance serviceInstance = loadBalancerClient.choose(serviceName);
         return serviceInstance;
+    }
+
+    @Resource
+    private CustomRemoteClient client;
+
+    @GetMapping("/remoteClient")
+    public String remoteClient() {
+        String result = client.clientTest();
+        log.info("调用结果：" + result);
+        return result;
     }
 
 }
