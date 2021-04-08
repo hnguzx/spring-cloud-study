@@ -1,8 +1,8 @@
 package pers.guzx.consumerservice.rule;
 
-import com.netflix.client.config.IClientConfig;
-import com.netflix.loadbalancer.*;
-import lombok.extern.slf4j.Slf4j;
+//import com.netflix.client.config.IClientConfig;
+//import com.netflix.loadbalancer.*;
+//import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Resource;
 import java.util.List;

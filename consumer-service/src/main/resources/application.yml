@@ -1,16 +1,16 @@
 spring:
   application:
     name: consumer-service
-  security:
-    user:
-      name: guzx
-      password: 970712
+#  security:
+#    user:
+#      name: guzx
+#      password: 970712
 server:
   port: 4569
 eureka:
   client:
     service-url:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${spring.cloud.client.ip-address}:8761/eureka
+      defaultZone: http://guzx:970712@${spring.cloud.client.ip-address}:8761/eureka
   instance:
     #    采用ip注册
     prefer-ip-address: true

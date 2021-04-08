@@ -10,13 +10,16 @@
         <module name="client-service" />
         <module name="eureka-server" />
         <module name="eureka-server-cluster" />
+        <module name="hystrix-demo" />
         <module name="custom-starter" />
-        <module name="consumer-service" />
         <module name="feign-api" />
+        <module name="consumer-service" />
+        <module name="feign-provide" />
+        <module name="hystrix-feign" />
         <module name="feign-consume" />
         <module name="section2" />
         <module name="ribbon-native" />
-        <module name="feign-provide" />
+        <module name="zuul-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -28,8 +31,11 @@
       <module name="feign-api" target="1.8" />
       <module name="feign-consume" target="1.8" />
       <module name="feign-provide" target="1.8" />
+      <module name="hystrix-demo" target="1.8" />
+      <module name="hystrix-feign" target="1.8" />
       <module name="ribbon-native" target="1.8" />
       <module name="section2" target="1.8" />
+      <module name="zuul-demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -42,8 +48,11 @@
       <module name="feign-api" options="-parameters" />
       <module name="feign-consume" options="-parameters" />
       <module name="feign-provide" options="-parameters" />
+      <module name="hystrix-demo" options="-parameters" />
+      <module name="hystrix-feign" options="-parameters" />
       <module name="ribbon-native" options="-parameters" />
       <module name="section2" options="-parameters" />
+      <module name="zuul-demo" options="-parameters" />
     </option>
   </component>
 </project>

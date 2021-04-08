@@ -10,8 +10,11 @@
       <module fileurl="file://$PROJECT_DIR$/feign-api/feign-api.iml" filepath="$PROJECT_DIR$/feign-api/feign-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/feign-consume/feign-consume.iml" filepath="$PROJECT_DIR$/feign-consume/feign-consume.iml" />
       <module fileurl="file://$PROJECT_DIR$/feign-provide/feign-provide.iml" filepath="$PROJECT_DIR$/feign-provide/feign-provide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix-demo/hystrix-demo.iml" filepath="$PROJECT_DIR$/hystrix-demo/hystrix-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix-feign/hystrix-feign.iml" filepath="$PROJECT_DIR$/hystrix-feign/hystrix-feign.iml" />
       <module fileurl="file://$PROJECT_DIR$/ribbon-native/ribbon-native.iml" filepath="$PROJECT_DIR$/ribbon-native/ribbon-native.iml" />
       <module fileurl="file://$PROJECT_DIR$/section2/section2.iml" filepath="$PROJECT_DIR$/section2/section2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul-demo/zuul-demo.iml" filepath="$PROJECT_DIR$/zuul-demo/zuul-demo.iml" />
     </modules>
   </component>
 </project>

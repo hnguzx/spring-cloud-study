@@ -1,5 +1,6 @@
 package pers.guzx.consumerservice.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -13,6 +14,7 @@ import javax.annotation.Resource;
  * @describe
  */
 @RestController
+@Slf4j
 public class ConsumerController {
 
     @Resource
@@ -23,5 +25,11 @@ public class ConsumerController {
         String url = "http://client-service/clientTest";
         String result = restTemplate.getForObject(url,String.class);
         return result;
+    }
+
+    @GetMapping("/celled")
+    public String called(){
+        log.info("消费者被call了");
+        return "消费者被call成功了";
     }
 }
