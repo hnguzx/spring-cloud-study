@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: hystrix-feign
+server:
+  port: 84
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://guzx:970712@${spring.cloud.client.ip-address}:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+
+# feign开启对hystrix支持
+feign:
+  circuitbreaker:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - hystrix.stream
+          - beans
+          - info
+          - health
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list:
+      - "10.0.0.22"
+
+turbine:
+  app-config: hystrix-feign
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
