@@ -3,10 +3,10 @@ spring:
     active: master
   application:
     name: client-service
-  security:
-    user:
-      name: client
-      password: 111111
+#  security:
+#    user:
+#      name: client
+#      password: 111111
 eureka:
   client:
     healthcheck:

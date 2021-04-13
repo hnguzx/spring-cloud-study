@@ -3,19 +3,29 @@ server:
 
 spring:
   application:
-    name: zuul-demo
+    name: service-zuul
 
 eureka:
   client:
     service-url:
       defaultZone: http://guzx:970712@${spring.cloud.client.ip-address}:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
 
 zuul:
   routes:
 #    自定义名称，可以设置多个
-    - persguzx:
-       path: /persguzx/**
-       url: http://www.baidu.com
-    - perslianghong:
+    guzx:
+      path: /persguzx/**
+      url: http://www.baidu.com
+    liangh:
       path: /persliangh/**
       url: http://www.163.com
+#    client-service:
+#      path: /client-service/**
+#      service-id: client-service
+#    consumer-service:
+#      path: /consumer-service/**
+#      service-id: consumer-service
+debug: true
