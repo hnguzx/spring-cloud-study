@@ -31,5 +31,14 @@ zuul:
     local:
       path: /local/**
       url: forward:/local
-
-
+  retryable: true
+#  IpFilter:
+#    pre:
+#      disable: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - "routes"
+        - "filters"
