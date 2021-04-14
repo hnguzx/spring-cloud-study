@@ -14,7 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/hystrix-feign/hystrix-feign.iml" filepath="$PROJECT_DIR$/hystrix-feign/hystrix-feign.iml" />
       <module fileurl="file://$PROJECT_DIR$/ribbon-native/ribbon-native.iml" filepath="$PROJECT_DIR$/ribbon-native/ribbon-native.iml" />
       <module fileurl="file://$PROJECT_DIR$/section2/section2.iml" filepath="$PROJECT_DIR$/section2/section2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zuul-demo/zuul-demo.iml" filepath="$PROJECT_DIR$/zuul-demo/zuul-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul-server/zuul-server.iml" filepath="$PROJECT_DIR$/zuul-server/zuul-server.iml" />
     </modules>
   </component>
 </project>

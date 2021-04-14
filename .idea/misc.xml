@@ -21,7 +21,7 @@
         <option value="$PROJECT_DIR$/feign-consume/pom.xml" />
         <option value="$PROJECT_DIR$/hystrix-demo/pom.xml" />
         <option value="$PROJECT_DIR$/hystrix-feign/pom.xml" />
-        <option value="$PROJECT_DIR$/zuul-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/zuul-server/pom.xml" />
       </list>
     </option>
   </component>
