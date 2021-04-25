@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: zuul-service
+  servlet:
+    multipart:
+      #      通过zuul设置文件上传，在zuul和文件上传的服务都需要设置
+      max-request-size: 104857600
+      max-file-size: 104857600
 
 eureka:
   client:
@@ -32,6 +37,7 @@ zuul:
       path: /local/**
       url: forward:/local
   retryable: true
+  ribbon-isolation-strategy: thread
 #  IpFilter:
 #    pre:
 #      disable: true
@@ -40,5 +46,6 @@ management:
     web:
       exposure:
         include:
-        - "routes"
-        - "filters"
+          - "routes"
+          - "filters"
+hystrix.com
