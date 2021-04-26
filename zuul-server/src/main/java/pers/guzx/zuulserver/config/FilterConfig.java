@@ -2,10 +2,7 @@ package pers.guzx.zuulserver.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import pers.guzx.zuulserver.filter.ErrorFilter;
-import pers.guzx.zuulserver.filter.IpFilter;
-import pers.guzx.zuulserver.filter.SecondFilter;
-import pers.guzx.zuulserver.filter.ThirdFilter;
+import pers.guzx.zuulserver.filter.*;
 
 /**
  * @author Guzx
@@ -34,5 +31,10 @@ public class FilterConfig {
     @Bean
     public ErrorFilter errorFilter(){
         return new ErrorFilter();
+    }
+
+    @Bean
+    public ResponseFile responseFile(){
+        return new ResponseFile();
     }
 }

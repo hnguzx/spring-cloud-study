@@ -38,6 +38,7 @@ zuul:
       url: forward:/local
   retryable: true
   ribbon-isolation-strategy: thread
+  include-debug-header: true
 #  IpFilter:
 #    pre:
 #      disable: true
@@ -48,4 +49,5 @@ management:
         include:
           - "routes"
           - "filters"
-hystrix.com
+
+
