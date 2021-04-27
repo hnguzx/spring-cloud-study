@@ -1,8 +1,16 @@
 package pers.guzx.zuulserver.util;
 
+import org.springframework.boot.web.context.WebServerInitializedEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.stereotype.Component;
+
 import javax.servlet.http.HttpServletRequest;
 
-public class IpUtils {
+@Component
+public class IpUtils implements ApplicationListener<WebServerInitializedEvent> {
+
+	private int serverPort;
+
 	public static String getIpAddr(HttpServletRequest request) {
 		String ip = request.getHeader("x-real-ip");
 
@@ -26,5 +34,14 @@ public class IpUtils {
 		}
 
 		return ip;
+	}
+
+	public int getCurrentPort() {
+		return this.serverPort;
+	}
+
+	@Override
+	public void onApplicationEvent(WebServerInitializedEvent webServerInitializedEvent) {
+		this.serverPort = webServerInitializedEvent.getWebServer().getPort();
 	}
 }

@@ -5,11 +5,13 @@ import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.boot.web.embedded.tomcat.TomcatWebServer;
 import pers.guzx.zuulserver.base.ResponseCode;
 import pers.guzx.zuulserver.base.ResponseData;
 import pers.guzx.zuulserver.util.IpUtils;
 import pers.guzx.zuulserver.util.JsonUtils;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,10 +39,14 @@ public class IpFilter extends ZuulFilter {
         return 1;
     }
 
+    @Resource
+    private IpUtils utils;
+
     @Override
     public boolean shouldFilter() {
         RequestContext context = RequestContext.getCurrentContext();
         log.info("尝试在这里获取信息");
+        System.out.println("当前系统的端口号：" + utils.getCurrentPort());
         return true;
     }
 

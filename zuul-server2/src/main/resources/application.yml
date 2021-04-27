@@ -1,0 +1,53 @@
+server:
+  port: 86
+
+spring:
+  application:
+    name: zuul-service2
+  servlet:
+    multipart:
+      #      通过zuul设置文件上传，在zuul和文件上传的服务都需要设置
+      max-request-size: 104857600
+      max-file-size: 104857600
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://guzx:970712@${spring.cloud.client.ip-address}:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+
+zuul:
+  prefix: /api
+  routes:
+    #    自定义名称，可以设置多个
+    guzx:
+      path: /persguzx/**
+      url: http://www.baidu.com
+    liangh:
+      path: /persliangh/**
+      url: http://www.163.com
+    client-service:
+      path: /client-service/**
+      service-id: client-service
+    consumer-service:
+      path: /consumer-api/**
+    local:
+      path: /local/**
+      url: forward:/local
+  retryable: true
+  ribbon-isolation-strategy: thread
+  include-debug-header: true
+#  IpFilter:
+#    pre:
+#      disable: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "routes"
+          - "filters"
+
+

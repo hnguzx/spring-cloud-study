@@ -11,4 +11,4 @@ logging:
 custom:
   enable: true
   name: nihao
-debug: true
+#debug: true

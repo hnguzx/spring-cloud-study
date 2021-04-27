@@ -1,5 +1,9 @@
 package pers.guzx.web.utils;
 
+import org.springframework.boot.web.context.WebServerInitializedEvent;
+import org.springframework.context.ApplicationListener;
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 
 
@@ -8,19 +12,31 @@ import java.util.Random;
  * @author:Administrator
  * @apiNote:获取可用端口
  */
-public class ServerPortUtil {
+@Component
+public class ServerPortUtil implements ApplicationListener<WebServerInitializedEvent> {
 
-	public static int getAvailablePort() {
-		int max = 65535;
-		int min = 2000;
+    private int serverPort;
 
-		Random random = new Random();
-		int port = random.nextInt(max) % (max - min + 1) + min;
-		boolean using = NetUtils.isLoclePortUsing(port);
-		if (using) {
-			return getAvailablePort();
-		} else {
-			return port;
-		}
-	}
+    public static int getAvailablePort() {
+        int max = 65535;
+        int min = 2000;
+
+        Random random = new Random();
+        int port = random.nextInt(max) % (max - min + 1) + min;
+        boolean using = NetUtils.isLoclePortUsing(port);
+        if (using) {
+            return getAvailablePort();
+        } else {
+            return port;
+        }
+    }
+
+    public int getCurrentPort() {
+        return this.serverPort;
+    }
+
+    @Override
+    public void onApplicationEvent(WebServerInitializedEvent event) {
+        this.serverPort = event.getWebServer().getPort();
+    }
 }

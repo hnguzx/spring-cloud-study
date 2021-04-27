@@ -17,8 +17,8 @@ eureka:
       defaultZone: http://${spring.cloud.client.ip-address}:${server.port}/eureka/
   server:
 #    以下两个配置只推荐在开发环境中使用
-#    enable-self-preservation: false
-#    eviction-interval-timer-in-ms: 60000
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 60000
   instance:
     prefer-ip-address: true
 

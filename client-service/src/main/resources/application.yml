@@ -1,6 +1,8 @@
+server:
+  port: 4567
 spring:
-  profiles:
-    active: master
+#  profiles:
+#    active: master
   application:
     name: client-service
 #  security:
@@ -25,16 +27,16 @@ eureka:
     metadata-map:
       address: hunan
 ---
-server:
-  port: 4567
-spring:
-  config:
-    activate:
-      on-profile: master
+#server:
+#  port: 4567
+#spring:
+#  config:
+#    activate:
+#      on-profile: master
 ---
-server:
-  port: 4568
-spring:
-  config:
-    activate:
-      on-profile: branch
+#server:
+#  port: 4568
+#spring:
+#  config:
+#    activate:
+#      on-profile: branch
