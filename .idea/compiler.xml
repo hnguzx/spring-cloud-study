@@ -7,21 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="feign-provide" />
-        <module name="ribbon-native" />
-        <module name="zuul-server" />
         <module name="zuul-server2" />
-        <module name="getaway" />
-        <module name="feign-consume" />
-        <module name="hystrix-demo" />
-        <module name="feign-api" />
-        <module name="eureka-server" />
-        <module name="client-service" />
         <module name="custom-starter" />
+        <module name="hystrix-demo" />
+        <module name="ribbon-native" />
+        <module name="eureka-server" />
         <module name="section2" />
-        <module name="hystrix-feign" />
+        <module name="feign-api" />
         <module name="consumer-service" />
+        <module name="getaway" />
+        <module name="zuul-server" />
+        <module name="feign-provide" />
         <module name="eureka-server-cluster" />
+        <module name="feign-consume" />
+        <module name="client-service" />
+        <module name="hystrix-feign" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

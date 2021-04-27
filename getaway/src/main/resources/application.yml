@@ -1,1 +1,12 @@
+server:
+  port: 2021
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: path_route
+          uri: http://cxytiandi.com
+          predicates:
+            - Path=/course
+
 
