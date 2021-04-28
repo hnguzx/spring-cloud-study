@@ -1,13 +1,13 @@
 <component name="libraryTable">
-  <library name="Maven: com.netflix.hystrix:hystrix-metrics-event-stream:1.5.18">
+  <library name="Maven: org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.8.RELEASE">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/netflix/hystrix/hystrix-metrics-event-stream/1.5.18/hystrix-metrics-event-stream-1.5.18.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-starter-netflix-hystrix/2.2.8.RELEASE/spring-cloud-starter-netflix-hystrix-2.2.8.RELEASE.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/netflix/hystrix/hystrix-metrics-event-stream/1.5.18/hystrix-metrics-event-stream-1.5.18-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-starter-netflix-hystrix/2.2.8.RELEASE/spring-cloud-starter-netflix-hystrix-2.2.8.RELEASE-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/netflix/hystrix/hystrix-metrics-event-stream/1.5.18/hystrix-metrics-event-stream-1.5.18-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/cloud/spring-cloud-starter-netflix-hystrix/2.2.8.RELEASE/spring-cloud-starter-netflix-hystrix-2.2.8.RELEASE-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
