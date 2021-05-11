@@ -8,11 +8,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gateway-service" />
         <module name="feign-provide" />
         <module name="ribbon-native" />
         <module name="zuul-server" />
         <module name="zuul-server2" />
-        <module name="getaway" />
         <module name="feign-consume" />
         <module name="hystrix-demo" />
         <module name="feign-api" />
@@ -34,6 +34,7 @@
       <module name="feign-api" target="1.8" />
       <module name="feign-consume" target="1.8" />
       <module name="feign-provide" target="1.8" />
+      <module name="gateway-service" target="1.8" />
       <module name="getaway" target="1.8" />
       <module name="hystrix-demo" target="1.8" />
       <module name="hystrix-feign" target="1.8" />
@@ -53,6 +54,7 @@
       <module name="feign-api" options="-parameters" />
       <module name="feign-consume" options="-parameters" />
       <module name="feign-provide" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
       <module name="getaway" options="-parameters" />
       <module name="hystrix-demo" options="-parameters" />
       <module name="hystrix-feign" options="-parameters" />

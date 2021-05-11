@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author Guzx
@@ -20,6 +21,12 @@ public class ClientController {
     @GetMapping("/clientTest")
     public String clientTest(){
         return "client connect success!";
+    }
+
+    @GetMapping("/addHead")
+    public String addRequestHead(HttpServletRequest request) {
+        System.err.println(request.getHeader("X-Request-Foo"));
+        return "success";
     }
 
     @Resource

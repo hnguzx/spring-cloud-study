@@ -1,0 +1,103 @@
+server:
+  port: 2021
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: fsh-house
+          uri: lb://fsh-house
+          predicates:
+            - Path=/house/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 10
+                redis-rate-limiter.burstCapacity: 20
+                key-resolver: "#{@ipKeyResolver}"
+      #        过滤器
+      #        - id: add_request_head
+      #          uri: http://localhost:4567
+      #          predicates:
+      #            - Query=name, addHead
+      #          filters:
+      #            - AddRequestHeader=X-Request-Foo, Bar
+      #        - id: remove_request_head
+      #          uri: http://localhost:4567
+      #          predicates:
+      #            - Query=name, removeHead
+      #          filters:
+      #            - RemoveRequestHeader=content-length
+      #        - id: status
+      #          uri: http://localhost:4567
+      #          predicates:
+      #            - Query=name, status
+      #          filters:
+      #            - SetStatus=401
+      #        - id: redirectTo
+      #          uri: https://www.163.com/
+      #          predicates:
+      #            - Query=name, redirect
+      #          filters:
+      #            - RedirectTo=302, https://www.baidu.com/
+      #        - id: customer
+      #          uri: http://localhost:4567
+      #          predicates:
+      #            - Query=name, customer
+      #          filters:
+      #            - name: Customer
+      #              args:
+      #                name: guzx
+      #        - id: customer2
+      #          uri: http://localhost:4567
+      #          predicates:
+      #            - Query=name, customer2
+      #          filters:
+      #            - name: Customer2
+      #              args:
+      #                name: name
+      #                value: lianghong
+      #       断言
+      #        - id: path_route
+      #          uri: http://cxytiandi.com
+      #          predicates:
+      #            - Path=/course
+      #            - Path=/blog/user/**
+      #        - id: eureka_route
+      #          uri: lb://client-service
+      #          predicates:
+      #            - Path=/client-service/**
+      #        - id: query_route
+      #          uri: http://cxytiandi.com
+      #          predicates:
+      #            - Query=foo,ba.
+      #        - id: method_route
+      #          uri: http://baidu.com
+      #          predicates:
+      #            - Method=GET
+      #        - id: head_route
+      #          uri: http://taobao.com
+      #          predicates:
+      #            - Header=X-Request-Id,\d+
+      #        - id: my_route
+      #          uri: http://www.163.com
+      #          predicates:
+      #            - name: Customer
+      #              args:
+      #                name: yinjihuan
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://guzx:970712@${spring.cloud.client.ip-address}:8761/eureka
+#debug: true

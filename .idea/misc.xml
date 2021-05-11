@@ -24,6 +24,7 @@
         <option value="$PROJECT_DIR$/zuul-server/pom.xml" />
         <option value="$PROJECT_DIR$/getaway/pom.xml" />
         <option value="$PROJECT_DIR$/zuul-server2/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-service/pom.xml" />
       </list>
     </option>
   </component>
