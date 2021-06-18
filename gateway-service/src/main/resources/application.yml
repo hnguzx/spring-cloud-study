@@ -8,21 +8,54 @@ spring:
     name: gateway-service
   cloud:
     gateway:
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            exposeHeaders:
+#              - contentType
+#            allowedHeaders:
+#              - contentType
+#            allowCredentials: true
+#            allowedMethods:
+#              - GET
+#              - POST
+#              - OPTIONS
+#              - PUT
+#              - DELETE
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: fsh-house
-          uri: lb://fsh-house
+        - id: client
+          uri: lb://client-service
           predicates:
-            - Path=/house/**
+            - Path=/clientTest
           filters:
-            - name: RequestRateLimiter
+            - name: Retry
               args:
-                redis-rate-limiter.replenishRate: 10
-                redis-rate-limiter.burstCapacity: 20
-                key-resolver: "#{@ipKeyResolver}"
+                retries: 3
+#                series: CLIENT_ERROR
+                statuses:
+                  - CONTINUE
+                  - SWITCHING_PROTOCOLS
+                methods:
+                  - POST
+                  - GET
+                exceptions:
+                  - java.io.IOException
+                  - org.springframework.cloud.gateway.support.TimeoutException
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+##                每秒执行的请求数量，令牌桶的填充速率
+#                redis-rate-limiter.replenishRate: 1
+##                每秒最大请求数量，令牌桶可以保存的令牌数
+#                redis-rate-limiter.burstCapacity: 60
+##                每个请求消耗多少个令牌，默认是1
+#                redis-rate-limiter.requestedTokens: 60
+#                key-resolver: "#{@ipKeyResolver}"
       #        过滤器
       #        - id: add_request_head
       #          uri: http://localhost:4567
@@ -100,4 +133,3 @@ eureka:
   client:
     service-url:
       defaultZone: http://guzx:970712@${spring.cloud.client.ip-address}:8761/eureka
-#debug: true

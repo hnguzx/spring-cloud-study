@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import pers.guzx.gatewayservice.utils.IpUtils;
 import reactor.core.publisher.Mono;
 
+import java.util.Objects;
+
 /**
  * @author Guzx
  * @version 1.0
@@ -13,7 +15,7 @@ import reactor.core.publisher.Mono;
  * @describe
  */
 @Configuration
-public class IPConfig {
+public class LimitConfig {
 
     /**
      * ip限流
@@ -22,9 +24,7 @@ public class IPConfig {
      */
     @Bean
     public KeyResolver ipKeyResolver() {
-        return exchange -> {
-            return Mono.just(exchange.getRequest().getRemoteAddress().getHostName());
-        };
+        return exchange -> Mono.just(exchange.getRequest().getRemoteAddress().getHostName());
     }
 
     /**
@@ -32,22 +32,18 @@ public class IPConfig {
      *
      * @return
      */
-    @Bean
+    /*@Bean
     public KeyResolver userKeyResolver() {
-        return exchange -> {
-            return Mono.just(exchange.getRequest().getQueryParams().getFirst("userId"));
-        };
-    }
+        return exchange -> Mono.just(exchange.getRequest().getQueryParams().getFirst("userId"));
+    }*/
 
     /**
      * 接口限流
      *
      * @return
      */
-    @Bean
+    /*@Bean
     public KeyResolver apiKeyResolver() {
-        return exchange -> {
-            return Mono.just(exchange.getRequest().getPath().value());
-        };
-    }
+        return exchange -> Mono.just(exchange.getRequest().getPath().value());
+    }*/
 }

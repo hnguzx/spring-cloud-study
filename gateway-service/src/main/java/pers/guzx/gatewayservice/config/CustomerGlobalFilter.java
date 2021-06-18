@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
  * @date 2021/5/11 17:05
  * @describe
  */
-@Configuration
+//@Configuration
 @Slf4j
 public class CustomerGlobalFilter {
 

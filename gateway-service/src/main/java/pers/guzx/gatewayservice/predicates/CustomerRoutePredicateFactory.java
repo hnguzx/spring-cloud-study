@@ -16,7 +16,7 @@ import java.util.function.Predicate;
  * @date 2021/4/28 18:21
  * @describe 自定义断言工厂
  */
-@ConfigurationProperties(prefix = "spring.cloud.gateway")
+//@ConfigurationProperties(prefix = "spring.cloud.gateway")
 @Component
 public class CustomerRoutePredicateFactory extends AbstractRoutePredicateFactory<CustomerRoutePredicateFactory.Config> {
 
