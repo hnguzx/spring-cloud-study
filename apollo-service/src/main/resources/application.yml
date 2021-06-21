@@ -1,0 +1,8 @@
+app:
+  id: sampleApp
+
+apollo:
+  meta: http://10.0.0.12:8080
+  bootstrap:
+    enabled: true
+    namespaces: application
