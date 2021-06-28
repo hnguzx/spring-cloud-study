@@ -13,9 +13,6 @@ import javax.annotation.Resource;
 @SpringBootApplication
 public class ApolloServiceApplication {
 
-    @Resource
-    private UserConfig userConfig;
-
     public static void main(String[] args) {
         System.setProperty("env", "DEV");
         SpringApplication.run(ApolloServiceApplication.class, args);

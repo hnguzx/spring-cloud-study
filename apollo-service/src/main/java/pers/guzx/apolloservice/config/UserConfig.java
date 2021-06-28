@@ -14,6 +14,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class UserConfig {
 
-    @Value("${username2:guzx}")
-    private String username2;
+    @Value("${sex:none}")
+    private String sex;
 }
