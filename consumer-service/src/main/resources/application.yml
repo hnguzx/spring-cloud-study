@@ -2,6 +2,10 @@ debug: true
 spring:
   application:
     name: consumer-service
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    sender:
+      type: web
 #  security:
 #    user:
 #      name: guzx

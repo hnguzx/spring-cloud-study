@@ -5,6 +5,10 @@ spring:
 #    active: master
   application:
     name: client-service
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    sender:
+      type: web
 #  security:
 #    user:
 #      name: client
@@ -26,6 +30,14 @@ eureka:
     lease-renewal-interval-in-seconds: 30
     metadata-map:
       address: hunan
+debug: true
+logging:
+  level:
+    pers:
+      guzx:
+        consumerservice:
+          client:
+            CustomRemoteClient: debug
 ---
 #server:
 #  port: 4567

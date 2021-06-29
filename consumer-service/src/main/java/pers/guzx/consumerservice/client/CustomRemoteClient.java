@@ -16,4 +16,7 @@ public interface CustomRemoteClient {
 
     @GetMapping("/clientTest")
     String clientTest();
+
+    @GetMapping("/autoTask")
+    String autoTask();
 }

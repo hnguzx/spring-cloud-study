@@ -105,4 +105,11 @@ public class HouseClientController {
         return result;
     }
 
+    @GetMapping("/remoteAutoTask")
+    public String remoteAutoTask() {
+        String result = client.autoTask();
+        log.info("调用结果：" + result);
+        return result;
+    }
+
 }
