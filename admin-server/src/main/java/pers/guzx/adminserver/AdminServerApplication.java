@@ -1,19 +1,17 @@
-package pers.guzx.clientservice;
+package pers.guzx.adminserver;
 
-import com.spring4all.swagger.EnableSwagger2Doc;
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
+@EnableAdminServer
 @EnableDiscoveryClient
-@EnableAsync
-@EnableSwagger2Doc
-public class ClientServiceApplication {
+public class AdminServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ClientServiceApplication.class, args);
+        SpringApplication.run(AdminServerApplication.class, args);
     }
 
 }

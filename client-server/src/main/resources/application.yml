@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: client-server
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+        username: guzx
+        password: 970712
+management:
+  trace:
+    http:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  file:
+    name: /guzx/log/admin-client.log

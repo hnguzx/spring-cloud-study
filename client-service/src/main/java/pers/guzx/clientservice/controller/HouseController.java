@@ -1,5 +1,8 @@
 package pers.guzx.clientservice.controller;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import pers.guzx.clientservice.pojo.House;
@@ -27,12 +30,14 @@ public class HouseController {
     }
 
     @PostMapping("/saveHouse")
-    public Long saveHouse(@RequestBody House house) {
+    public Long saveHouse(@ApiParam(value = "新增房子", required = true) @RequestBody House house) {
         log.info(house.toString());
         return house.getId();
     }
 
     @DeleteMapping("/deleteHouse/{houseId}")
+    @ApiImplicitParams(@ApiImplicitParam(name = "houseId", value = "房子的唯一ID", required = true,
+            paramType = "query", dataType = "String", defaultValue = "1"))
     public Long deleteHouse(@PathVariable("houseId") Long houseId) {
         log.info("要删除的house是：" + houseId);
         return houseId;

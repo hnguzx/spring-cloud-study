@@ -1,6 +1,9 @@
 package pers.guzx.clientservice.controller;
 
 import com.netflix.discovery.EurekaClient;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +22,8 @@ import javax.servlet.http.HttpServletRequest;
 @RestController
 public class ClientController {
 
+    @ApiOperation(value = "测试连通性",notes = "无实际业务意义")
+    @ApiResponses(@ApiResponse(code = 200,message = "OK",response = String.class))
     @GetMapping("/clientTest")
     public String clientTest(){
         return "client connect success!";

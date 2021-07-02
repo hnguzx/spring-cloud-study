@@ -1,0 +1,44 @@
+server:
+  port: 8080
+management:
+  trace:
+    http:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  mail:
+    host: smtp.qq.com
+    username: hnguzx@qq.com
+    password: eowlmryxctezebja
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  boot:
+    admin:
+      notify:
+        mail:
+          to: hnguzx@gmail.com
+          from: hnguzx@qq.com
+  security:
+    user:
+      name: guzx
+      password: 970712
+  application:
+    name: admin-server
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://guzx:970712@${spring.cloud.client.ip-address}:8761/eureka
+  instance:
+    #    采用ip注册
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}

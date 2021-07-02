@@ -138,3 +138,8 @@ eureka:
   client:
     service-url:
       defaultZone: http://guzx:970712@${spring.cloud.client.ip-address}:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
